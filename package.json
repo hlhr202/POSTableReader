@@ -5,7 +5,8 @@
   "main": "bootstrapper.js",
   "scripts": {
     "start": "electron .",
-    "build-mac": "electron-packager ./ --out ./build POSTableReader --platform=darwin"
+    "build-mac": "electron-packager ./ --out ./build POSTableReader --platform=darwin",
+    "build-win": "electron-packager ./ --out ./build POSTableReader --platform=win32"
   },
   "repository": "https://github.com/hlhr202/POSTableReader",
   "keywords": [
