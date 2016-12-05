@@ -81,7 +81,7 @@ class App extends Component {
 
 	saveFileClick = (e) => {
 		let data = this.state.data
-		let namePattern = data['tenant_id'] + '_' + data['pos_no'] + '_' + data['tran_file_no'] + '_' + moment().format('YYMMDDhhmm') + '.txt'
+		let namePattern = 'd'+data['tenant_id'] + '_' + data['pos_no'] + '_' + data['tran_file_no'] + '_' + moment().format('YYMMDDhhmm') + '.txt'
 		let fileNo = data['tran_file_no']
 		ipc.send('open-save-dialog', {
 			outputString: this.state.outputString,

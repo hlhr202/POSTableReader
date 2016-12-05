@@ -1,5 +1,6 @@
 import * as xlsx from 'xlsx'
 import moment from 'moment'
+import _ from 'lodash'
 
 class SheetBook {
     constructor() {
@@ -64,8 +65,8 @@ class SheetBook {
 
             summery.total = total
             summery.count = sales.length
-            summery.head = sales[0]['no']
-            summery.tail = sales[sales.length - 1]['no']
+            summery.head = _.padStart(1, 4, 0)
+            summery.tail = _.padStart(sales.length, 4, 0)
             summery.date = moment().format('YYYYMMDD')
             summery.tax = (total / 1.07 * 0.07).toFixed(2)
             return summery;
