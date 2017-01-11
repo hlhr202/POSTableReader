@@ -9,7 +9,7 @@ let prepareStorage = () => {
             if (error) return reject(error)
 
             if (!data['tenant_id']) {
-                data['tenant_id'] = '20044444-2504'
+                data['tenant_id'] = '2004444-2504'
             }
             if (!data['pos_no']) {
                 data['pos_no'] = 1
