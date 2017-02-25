@@ -63,12 +63,13 @@ class SheetBook {
             let total = 0;
             sales.map((sale) => { total += parseFloat(sale.sale) })
 
-            summery.total = total
             summery.count = sales.length
             summery.head = _.padStart(1, 4, 0)
             summery.tail = _.padStart(sales.length, 4, 0)
             summery.date = moment().format('YYYYMMDD')
+            summery.gross = total
             summery.tax = (total / 1.07 * 0.07).toFixed(2)
+            summery.net = total - summery.tax
             return summery;
         }
     }

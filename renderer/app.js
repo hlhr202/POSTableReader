@@ -57,9 +57,9 @@ class App extends Component {
 		data['open_receipt'] = summery['head']
 		data['close_receipt'] = summery['tail']
 		data['total_receipt'] = summery['count']
-		data['gross_sales'] = summery['total']
+		data['gross_sales'] = summery['gross']
 		data['tax'] = summery['tax']
-		data['net_sales'] = summery['total']
+		data['net_sales'] = summery['net']
 		return data;
 	}
 
