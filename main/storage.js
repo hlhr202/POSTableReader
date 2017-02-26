@@ -14,6 +14,9 @@ let prepareStorage = () => {
             if (!data['pos_no']) {
                 data['pos_no'] = 1
             }
+            if (!data['col_no']) {
+                data['col_no'] = 'J'
+            }
             if (!data['tran_file_no'] || data['tran_file_no'] > 9999) {
                 data['tran_file_no'] = 1
             }

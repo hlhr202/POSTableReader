@@ -1,12 +1,13 @@
 import * as xlsx from 'xlsx'
 import moment from 'moment'
 import _ from 'lodash'
+import * as storage from './storage'
 
 class SheetBook {
     constructor() {
         this.workbook;
         this.seriesCol = 'A';
-        this.saleCol = 'I';
+        this.saleCol = storage.getConfig()['col_no'];
     }
 
     readFile(path) {
@@ -67,9 +68,9 @@ class SheetBook {
             summery.head = _.padStart(1, 4, 0)
             summery.tail = _.padStart(sales.length, 4, 0)
             summery.date = moment().format('YYYYMMDD')
-            summery.gross = total
+            summery.gross = total.toFixed(2)
             summery.tax = (total / 1.07 * 0.07).toFixed(2)
-            summery.net = total - summery.tax
+            summery.net = (total - summery.tax).toFixed(2)
             return summery;
         }
     }

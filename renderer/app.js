@@ -106,9 +106,10 @@ class App extends Component {
 				<Container as='div' id='header-container' textAlign='center'>
 					<Header as='h2' icon>
 						<Icon name='file excel outline' /> POS Table Reader
+						<Divider />
 						<Header.Subheader>
 							TENANT ID: { config['tenant_id'] ? config['tenant_id'] : null } Pos Number: { config['pos_no'] ? config['pos_no'] : null
-							} Current File Count: { config['tran_file_no'] ? config['tran_file_no'] : null }
+							} <br /> Current File Count: { config['tran_file_no'] ? config['tran_file_no'] : null } Current Column: { config['col_no'] ? config['col_no']:null }
 						</Header.Subheader>
 					</Header>
 				</Container>
