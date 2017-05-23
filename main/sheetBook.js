@@ -16,6 +16,7 @@ class SheetBook {
 
     getSheets() {
         if (this.workbook) {
+            //console.log(Object.keys(this.workbook));
             let sheetName = this.workbook.SheetNames[0];
             return this.workbook.Sheets[sheetName];
         }
@@ -23,7 +24,8 @@ class SheetBook {
 
     getRange() {
         if (this.workbook) {
-            return this.getSheets()['!range']['e'];
+            var range = xlsx.utils.decode_range(this.getSheets()['!ref']);
+            return range.e;
         }
     }
 
@@ -34,7 +36,8 @@ class SheetBook {
             for (let i = 2; i < row; i++) {
                 let cellNo = this.seriesCol + i;
                 let cell = this.getSheets()[cellNo];
-                if (cell['v']) {
+                //console.log(cell)
+                if (cell&&cell['v']) {
                     seriesNo.push({ cell: cellNo, row: i, value: cell['v'] });
                 }
             }
